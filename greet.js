@@ -1,7 +1,9 @@
-function greet(greeting, hello) { 
-  console.log("Hello");
-  console.log(`${greeting} ${hello}`); 
+function createGreeter(greeting) {
+  return function greet(name) {
+    return `${greeting}, ${name}!`;
+  };
 }
 
-greet("Good morning", "John");
+const greet = createGreeter("Hello");
 
+console.log(greet("World"));
